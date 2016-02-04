@@ -10,7 +10,7 @@ scalafxml-demo is an EDLA project.
 The purpose of [edla.org](http://www.edla.org) is to promote the state of the art in various domains.
 
 ### License ###
-© 2014 Olivier ROLAND. Distributed under the GPLv3 License.
+© 2014-2016 Olivier ROLAND. Distributed under the GPLv3 License.
 
 [1]: https://github.com/vigoo/scalafxml
 [2]: http://www.apress.com/9781430268727/

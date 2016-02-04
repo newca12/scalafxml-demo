@@ -22,6 +22,7 @@ import scalafx.scene.text.FontWeight
 import scalafx.scene.text.FontWeight.sfxEnum2jfx
 import scalafx.scene.text.Text
 
+// scalastyle:off magic.number
 object AudioConfigPureScalaFX extends JFXApp {
 
   val acModel = new AudioConfigModel()
@@ -45,15 +46,17 @@ object AudioConfigPureScalaFX extends JFXApp {
             endY = 1.0,
             stops = List(
               Stop(0, Color.web("0xAEBBCC")),
-              Stop(1, Color.web("0x6D84A3"))))
+              Stop(1, Color.web("0x6D84A3"))
+            )
+          )
         },
         new Text {
           layoutX = 65
           layoutY = 12
-          textOrigin = VPos.TOP
-          fill = Color.WHITE
+          textOrigin = VPos.Top
+          fill = Color.White
           text = "Audio Configuration"
-          font = Font.font("SansSerif", FontWeight.BOLD, 20)
+          font = Font.font("SansSerif", FontWeight.Bold, 20)
         },
         new Rectangle {
           x = 0
@@ -69,15 +72,15 @@ object AudioConfigPureScalaFX extends JFXApp {
           height = 130
           arcWidth = 20
           arcHeight = 20
-          fill = Color.WHITE
+          fill = Color.White
           stroke = Color.color(0.66, 0.67, 0.69)
         },
         new Text {
           layoutX = 18
           layoutY = 69
-          textOrigin = VPos.TOP
+          textOrigin = VPos.Top
           fill = Color.web("#131021")
-          font = Font.font("SansSerif", FontWeight.BOLD, 18)
+          font = Font.font("SansSerif", FontWeight.Bold, 18)
           text <== acModel.selectedDBs.asString + " dB"
         },
         new Slider {
@@ -99,10 +102,10 @@ object AudioConfigPureScalaFX extends JFXApp {
         new Text {
           layoutX = 18
           layoutY = 113
-          textOrigin = VPos.TOP
+          textOrigin = VPos.Top
           fill = Color.web("#131021")
           text = "Muting"
-          font = Font.font("SanSerif", FontWeight.BOLD, 18)
+          font = Font.font("SanSerif", FontWeight.Bold, 18)
         },
         new CheckBox {
           layoutX = 280
@@ -119,12 +122,13 @@ object AudioConfigPureScalaFX extends JFXApp {
         new Text {
           layoutX = 18
           layoutY = 154
-          textOrigin = VPos.TOP
+          textOrigin = VPos.Top
           fill = Color.web("#131021")
           text = "Genre"
-          font = Font.font("SanSerif", FontWeight.BOLD, 18)
+          font = Font.font("SanSerif", FontWeight.Bold, 18)
         },
-        genreChoiceBox)
+        genreChoiceBox
+      )
     }
   }
 

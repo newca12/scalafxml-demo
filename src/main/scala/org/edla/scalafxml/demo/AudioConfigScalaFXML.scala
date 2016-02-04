@@ -13,8 +13,9 @@ import javafx.beans.binding.StringBinding
 class AudioConfigPresenter(
     private val volume: Text,
     private val slider: Slider,
-    private val genre: ChoiceBox[String],
-    private val mute: CheckBox) {
+    private val genre:  ChoiceBox[String],
+    private val mute:   CheckBox
+) {
 
   val acModel = new AudioConfigModel()
   genre.items = acModel.genres
@@ -45,12 +46,12 @@ import scalafx.Includes.jfxParent2sfx
 object AudioConfigScalaFXML extends JFXApp {
 
   import java.io.IOException
-  val resource = getClass.getResource("audio.fxml")
-  if (resource == null) {
+  val resource = Option(getClass.getResource("audio.fxml"))
+  if (resource.isEmpty) {
     throw new IOException("Cannot load resource: audio.fxml")
   }
 
-  val root = FXMLView(resource, NoDependencyResolver)
+  val root = FXMLView(resource.get, NoDependencyResolver)
 
   stage = new PrimaryStage() {
     title = "Audio Configurator"

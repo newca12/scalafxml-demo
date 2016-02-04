@@ -4,6 +4,7 @@ import scalafx.beans.property.{ BooleanProperty, IntegerProperty }
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.control.SingleSelectionModel
 
+// scalastyle:off magic.number
 class AudioConfigModel {
 
   /** The minimum audio volume in decibels */
@@ -21,12 +22,14 @@ class AudioConfigModel {
   /**
    * List of some musical genres
    */
-  val genres = ObservableBuffer("Chamber",
+  val genres = ObservableBuffer(
+    "Chamber",
     "Country",
     "Cowbell",
     "Metal",
     "Polka",
-    "Rock")
+    "Rock"
+  )
 
   /** A reference to the selection model used by the Slider */
   var genreSelectionModel: SingleSelectionModel[String] = _
@@ -35,7 +38,7 @@ class AudioConfigModel {
    * Adds a change listener to the selection model of the ChoiceBox, and contains
    * code that executes when the selection in the ChoiceBox changes.
    */
-  def addListenerToGenreSelectionModel() {
+  def addListenerToGenreSelectionModel(): Unit = {
     this.genreSelectionModel.selectedIndex.onChange({
       selectedDBs.value = this.genreSelectionModel.selectedIndex() match {
         case 0 ⇒ 80
@@ -46,5 +49,6 @@ class AudioConfigModel {
         case 5 ⇒ 130
       }
     })
+    ()
   }
 }
