@@ -1,5 +1,7 @@
 name := "scalafxml-demo"
 
+organization := "org.edla"
+
 version := "0.0.1"
 
 jfxSettings
